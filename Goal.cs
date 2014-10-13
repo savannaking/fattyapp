@@ -2,12 +2,12 @@ using System;
 
 namespace bg
 {
-	class Goal
+	public class Goal
 	{
-		public DateTime goalDate;
+        public DateTime GoalDate { get; set; }
 
 		public Goal(DateTime goalDate){
-			this.goalDate = goalDate;
+			this.GoalDate = goalDate;
 		}
 	}
 }

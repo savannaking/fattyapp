@@ -3,54 +3,44 @@ using System.Collections.Generic;
 
 namespace bg
 {
-	class UserProgram
+	public class UserProgram
 	{
-		public double riskAmount;
-		public DateTime startDate;
-		public List<Goal> goals = new List<Goal>();
+        public double RiskAmount { get; set; }
+        public DateTime StartDate { get; set; }
+        public List<Goal> Goals { get; set; }
 
 		public UserProgram(double riskAmount, DateTime startDate, List<Goal> goals)
 		{
-			this.riskAmount = riskAmount;
-			this.startDate = startDate;
-			this.goals = goals;
-			//Need to check to make sure goals is not empty?
+            Goals = new List<Goal>();
+			this.RiskAmount = riskAmount;
+			this.StartDate = startDate;
+			this.Goals = goals;
+			//Need to check to make sure goals is not empty? 
 		}
 
 		public void PrintGoals()
 		{
-			foreach(Goal g in goals){
-				Console.WriteLine("Goal on " + g.goalDate);
+			foreach(Goal g in Goals){
+				Console.WriteLine("Goal on " + g.GoalDate);
 			}
 		}
 
-		public void Update(DateTime? updateDate = null)
-		{
-			//Method to update this user program based on updateDate (default to DateTime.Now)
-			//Checks whether goals are met
+        public Goal NextGoal(DateTime? someDate = null)
+        {
+            //Returns the next goal (regardless of whether it is active)  (How are boundaries handled??)
+            //Returns null if none exists
 
-			if(updateDate == null){
-				updateDate = DateTime.Now;
-			} else{
-				//Check to make sure updateDate is after the most recent weigh in for this user
-			}
+            //if there is a "next goal" should there also be a current goal? how do we know which is current?
+        }
 
-		}
+        public double AmountEligible(DateTime? someDate = null)
+        {
+            //Returns the amount of money still elligible to be earned as of someDate (How are boundaries handled??)
+        }
 
-		public Goal nextGoal(DateTime? someDate = null){
-			//Returns the next goal (regardless of whether it is active)  (How are boundaries handled??)
-			//Returns null if none exists
-
-		}
-
-		public double AmountElligible(DateTime? someDate = null){
-			//Returns the amount of money still elligible to be earned as of someDate (How are boundaries handled??)
-
-		}
-
-		public double AmountEarned(){
-			//Returns the amount of money earned thus far
-
-		}
+        public double AmountEarned()
+        {
+            //Returns the amount of money earned thus far
+        }
 	}
 }
