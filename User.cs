@@ -3,17 +3,18 @@ using System.Collections.Generic;
 
 namespace bg
 {
-	class User
+	public class User
 	{
-		public enum Genders {Male, Female};
+		private enum Genders {Male, Female};
 
-		double weight;
-		DateTime birthdate;
-		Genders gender;
-		List<UserProgram> userPrograms = new List<UserProgram>();
-		List<WeighIn> weighIns = new List<WeighIn>();
+        public double Weight { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Genders Gender { get; set; }
+        public List<UserProgram> UserPrograms { get; set; } //initialize in constructor instead
+        public List<WeighIn> WeighIns { get; set; }
 
 		public User(double weight, DateTime birthdate, string gender){
+            this.userPrograms = new List<UserPrograms>();
 			if (gender=="F")
 				this.gender = Genders.Female;
 			else
