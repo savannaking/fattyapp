@@ -14,12 +14,23 @@ namespace bg
 			this.riskAmount = riskAmount;
 			this.startDate = startDate;
 			this.goals = goals;
+			//Need to check to make sure goals is not empty?
 		}
 
-		public void PrintGoals(){
+		public void PrintGoals()
+		{
 			foreach(Goal g in goals){
 				Console.WriteLine("Goal on " + g.goalDate);
 			}
+		}
+
+		public void Update(DateTime? updateDate = null)
+		{
+			//Method to update this user program based on updateDate (default to DateTime.Now)
+			//Checks whether goals are met
+
+			
+
 		}
 	}
 }
