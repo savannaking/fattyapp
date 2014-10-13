@@ -56,5 +56,19 @@ namespace bg
 				Console.WriteLine("You weighed in at " + w.weight + " on " + w.weighInDate);
 			}
 		}
+
+		public WeighIn getWeighIn(DateTime? someDate = null)
+		{
+			//Return weigh in closest to, but not exceeding, someDate
+
+		}
+
+		public List<WeighIn> getWeighIns(DateTime d1, DateTime? d2)
+		{
+			//Return a list of all weighIns for a user, between dates d1 and d2 (inclusive)
+			//Default d2 to DateTime.now
+
+			
+		}
 	}
 }

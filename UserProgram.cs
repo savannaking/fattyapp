@@ -29,7 +29,27 @@ namespace bg
 			//Method to update this user program based on updateDate (default to DateTime.Now)
 			//Checks whether goals are met
 
-			
+			if(updateDate == null){
+				updateDate = DateTime.Now;
+			} else{
+				//Check to make sure updateDate is after the most recent weigh in for this user
+			}
+
+		}
+
+		public Goal nextGoal(DateTime? someDate = null){
+			//Returns the next goal (regardless of whether it is active)  (How are boundaries handled??)
+			//Returns null if none exists
+
+		}
+
+		public double AmountElligible(DateTime? someDate = null){
+			//Returns the amount of money still elligible to be earned as of someDate (How are boundaries handled??)
+
+		}
+
+		public double AmountEarned(){
+			//Returns the amount of money earned thus far
 
 		}
 	}
